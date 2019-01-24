@@ -14,10 +14,8 @@ class Counter extends Component {
     ); 
   }
 
-  
-
-
   getValue(){
+    console.log("hello" , this.props.counter)
     const { value } = this.props.counter;
     return (value) === 0 ? "Zero" : value ; 
   }
