@@ -40,7 +40,9 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <NavBar/>
+        <NavBar
+          
+        />
         <main className="container">
           <Counters 
             onReset = {this.handleReset}
