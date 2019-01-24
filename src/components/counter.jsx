@@ -1,19 +1,27 @@
 import React, { Component } from 'react';
 class Counter extends Component {
   state = {
-    count : 0
-
+    count : 0 , 
+    tags : ["tag1" , "tag2" , "tag3" ]
   };
+
   render() { 
     
     return ( 
       <div>
         <span className = {this.getBadgeClasses()} >{this.getValue()}</span>
-        <button>increment</button>
+        <button onClick = { () => this.handleIncrement("product")}>increment</button>
+        <ul> {this.state.tags.map( tag => <li key = {tag}>{tag}</li> )}</ul>
       </div> 
     ); 
   }
 
+  handleIncrement = (product) => {
+    console.log(product)
+    this.setState({ count: this.state.count + 1})
+  }
+
+  
   getValue(){
     return (this.state.count) === 0 ? "Zero" : this.state.count ; 
   }
